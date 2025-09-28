@@ -47,6 +47,7 @@ body {
     justify-content: end;
     font-size: 4.5rem;
     margin-right: 5%;
+    overflow: hidden;
 }
 
 .wrapper .row {

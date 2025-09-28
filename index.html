@@ -9,36 +9,36 @@
 <body>
   <div class="wrapper">
     <div class="display">
-      <p>0</p>
+      <p id="display-screen">0</p>
     </div>
     <div class="row" id="first-row">
-      <button class="grey-button">C</button>
-      <button class="grey-button">%</button>
-      <button class="grey-button">DEL</button>
-      <button class="orange-button">/</button>
+      <button class="grey-button" onclick="addValueToDisplay('C')">C</button>
+      <button class="grey-button" onclick="addValueToDisplay('%')">%</button>
+      <button class="grey-button" onclick="addValueToDisplay('DEL')">DEL</button>
+      <button class="orange-button" onclick="addValueToDisplay('/')">/</button>
     </div>
     <div class="row" id="second-row">
-      <button class="black-button">7</button>
-      <button class="black-button">8</button>
-      <button class="black-button">9</button>
-      <button class="orange-button">+</button>
+      <button class="black-button" onclick="addValueToDisplay('7')">7</button>
+      <button class="black-button" onclick="addValueToDisplay('8')">8</button>
+      <button class="black-button" onclick="addValueToDisplay('9')">9</button>
+      <button class="orange-button" onclick="addValueToDisplay('+')">+</button>
     </div>
     <div class="row" id="third-row">
-      <button class="black-button">4</button>
-      <button class="black-button">5</button>
-      <button class="black-button">6</button>
-      <button class="orange-button">-</button>
+      <button class="black-button" onclick="addValueToDisplay('4')">4</button>
+      <button class="black-button" onclick="addValueToDisplay('5')">5</button>
+      <button class="black-button" onclick="addValueToDisplay('6')">6</button>
+      <button class="orange-button" onclick="addValueToDisplay('-')">-</button>
     </div>
     <div class="row" id="fourth-row">
-      <button class="black-button">1</button>
-      <button class="black-button">2</button>
-      <button class="black-button">3</button>
-      <button class="orange-button">x</button>
+      <button class="black-button" onclick="addValueToDisplay('1')">1</button>
+      <button class="black-button" onclick="addValueToDisplay('2')">2</button>
+      <button class="black-button" onclick="addValueToDisplay('3')">3</button>
+      <button class="orange-button" onclick="addValueToDisplay('*')">x</button>
     </div>
     <div class="row" id="fifth-row">
-      <button class="black-button">.</button>
-      <button class="black-button">0</button>
-      <button class="orange-button">=</button>
+      <button class="black-button" onclick="addValueToDisplay('.')">.</button>
+      <button class="black-button" onclick="addValueToDisplay('0')">0</button>
+      <button class="orange-button" onclick="addValueToDisplay('=')">=</button>
     </div>
   </div>
   <script src="script.js"></script>
