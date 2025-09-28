@@ -1,42 +1,45 @@
 const display = document.getElementById("display-screen");
 
-const addValueToDisplay = (value) => {
-    if (display.innerText === "0" && value !== "0" && value !== "C") {
-        if (value === "DEL") {
-            return;
-        }
-        display.innerText = ("");
-        display.innerText += value;
-        return;
+const resetDisplay = () => {
+    display.innerText = "0";
+}
+
+const handleDelete = () => {
+    if (display.innerText.length > 1) {
+        display.innerText = display.innerText.slice(0, -1);
     }
+    else {
+        return resetDisplay();
+    }
+}
+
+const giveResult = () => {
+    try {
+        const result = eval(display.innerText);
+        if (result === Infinity) {
+            throw new Error("Cannot divide a number by 0");
+        }
+        display.innerText = result;
+    }
+    catch (error) {
+        display.innerText = "ERROR";
+        setTimeout(resetDisplay, 1000);
+    }
+}
+
+const addValueToDisplay = (value) => {
     if (value === "C") {
-        display.innerText = ("0");
-        return;
+        return resetDisplay();
     }
     if (value === "DEL") {
-        let individualValues = [...display.innerText];
-        individualValues.pop();
-        display.innerText = individualValues.join('');
-        if (display.innerText === "") {
-            display.innerText = "0";
-        }
-        return;
+        return handleDelete();
     }
     if (value === "=") {
-        try {
-            display.innerText = eval(display.innerText);
-            if (display.innerText === "Infinity") {
-                display.innerText = "ERROR";
-                setTimeout(function () {display.innerText = "0";}, 1000);
-                return
-            }
-            return;
-        }
-        catch (error) {
-            display.innerText = "ERROR";
-            setTimeout(function () {display.innerText = "0";}, 1000);
-            return
-        }
+        return giveResult();
+    }
+    if (display.innerText === "0" && value !== "0") {
+        display.innerText = value;
+        return;
     }
     display.innerText += value;
 }

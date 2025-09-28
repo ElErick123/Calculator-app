@@ -12,9 +12,9 @@
       <p id="display-screen">0</p>
     </div>
     <div class="row" id="first-row">
-      <button class="grey-button" onclick="addValueToDisplay('C')">C</button>
+      <button class="grey-button" onclick="resetDisplay()">C</button>
       <button class="grey-button" onclick="addValueToDisplay('%')">%</button>
-      <button class="grey-button" onclick="addValueToDisplay('DEL')">DEL</button>
+      <button class="grey-button" onclick="handleDelete()">DEL</button>
       <button class="orange-button" onclick="addValueToDisplay('/')">/</button>
     </div>
     <div class="row" id="second-row">
@@ -38,7 +38,7 @@
     <div class="row" id="fifth-row">
       <button class="black-button" onclick="addValueToDisplay('.')">.</button>
       <button class="black-button" onclick="addValueToDisplay('0')">0</button>
-      <button class="orange-button" onclick="addValueToDisplay('=')">=</button>
+      <button class="orange-button" onclick="giveResult()">=</button>
     </div>
   </div>
   <script src="script.js"></script>
