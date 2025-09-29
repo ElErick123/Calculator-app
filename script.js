@@ -28,6 +28,12 @@ const giveResult = () => {
 }
 
 const addValueToDisplay = (value) => {
+    const operators = ["+", "-", "*", "/", "%"];
+    const lastChar = display.innerText.slice(-1);
+
+    if (operators.includes(value) && operators.includes(lastChar)) {
+        return;
+    }
     if (value === "C") {
         return resetDisplay();
     }
